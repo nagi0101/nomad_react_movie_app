@@ -6,9 +6,9 @@ function Movie({ year, title, summary, poster, genres, index }) {
   return (
     <div
       className="movie"
-      data-aos="fade-up"
+      data-aos={index > 3 ? "fade-up" : ""}
       data-aos-anchor-placement={
-        index % 2 === 0 ? "center-bottom" : "bottom-bottom"
+        index > 3 && index % 2 === 0 ? "center-bottom" : "bottom-bottom"
       }
     >
       <img src={poster} alt={title} title={title} />
@@ -22,7 +22,7 @@ function Movie({ year, title, summary, poster, genres, index }) {
             </li>
           ))}
         </ul>
-        <p className="movie__summary">{summary}</p>
+        <p className="movie__summary">{summary.slice(0, 180)}...</p>
       </div>
     </div>
   );
