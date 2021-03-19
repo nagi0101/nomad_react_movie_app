@@ -31,8 +31,7 @@ class App extends React.Component {
           </div>
         ) : (
           <div className="movies">
-            {movies.map((movie) => {
-              console.log(movie);
+            {movies.map((movie, index) => {
               return (
                 <Movie
                   key={movie.id}
@@ -42,6 +41,7 @@ class App extends React.Component {
                   summary={movie.summary}
                   poster={movie.medium_cover_image}
                   genres={movie.genres}
+                  index={index}
                 />
               );
             })}

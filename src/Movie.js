@@ -2,9 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Movie.css";
 
-function Movie({ year, title, summary, poster, genres }) {
+function Movie({ year, title, summary, poster, genres, index }) {
   return (
-    <div className="movie">
+    <div
+      className="movie"
+      data-aos="fade-up"
+      data-aos-anchor-placement={
+        index % 2 === 0 ? "center-bottom" : "bottom-bottom"
+      }
+    >
       <img src={poster} alt={title} title={title} />
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
@@ -28,6 +34,7 @@ Movie.propTypes = {
   summary: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  index: PropTypes.number,
 };
 
 export default Movie;

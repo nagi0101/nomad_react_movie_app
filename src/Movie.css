@@ -1,0 +1,47 @@
+.movie {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #5cdb95;
+  border-radius: 20px;
+  padding: 20px;
+  color: #05386b;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 15px;
+}
+
+.movie > img {
+  margin: -60px 20px 0px 0px;
+  box-shadow: #05380566 5px 1px 5px;
+}
+
+.movie .movie__title {
+  font-weight: bold;
+  font-size: 26px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #edf5e1;
+  margin: 10px 0;
+}
+
+.movie .movie__year {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.movie .genres {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.movie .genres .genre {
+  float: left;
+  white-space: nowrap;
+  margin-right: 7px;
+}
+
+.movie .movie__summary {
+  margin: 5px 0;
+}
