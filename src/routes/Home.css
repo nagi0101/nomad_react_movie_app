@@ -7,6 +7,10 @@ body,
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: #05286b;
 }

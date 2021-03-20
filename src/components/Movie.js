@@ -3,19 +3,16 @@ import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import "./Movie.css";
 
-function Movie({ year, title, summary, poster, genres, index }) {
+function Movie({ year, title, summary, poster, genres, index, id }) {
   return (
     <Link to={{
-      pathname:"/movie-detail",
+      pathname:`/movie/${id}`,
       state:{ year, title, summary, poster, genres, index },
-    }}>
-      <div
-        className="movie"
-        data-aos={index > 3 ? "fade-up" : ""}
-        data-aos-anchor-placement={
-          index > 3 && index % 2 === 0 ? "center-bottom" : "bottom-bottom"
-        }
-        >
+    }} data-aos={index > 3 ? "fade-up" : ""}
+    data-aos-anchor-placement={
+      index > 3 && index % 2 === 0 ? "center-bottom" : "bottom-bottom"
+    }>
+      <div className="movie">
         <img src={poster} alt={title} title={title} />
         <div className="movie__data">
           <h3 className="movie__title">{title}</h3>
